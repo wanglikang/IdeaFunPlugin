@@ -8,12 +8,21 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.wanglikang.ideafunplugin.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.wanglikang.ideafunplugin.services.MyProjectService"/>
+<!--        <applicationService serviceImplementation="com.github.wanglikang.ideafunplugin.services.MyApplicationService"/>-->
+<!--        <projectService serviceImplementation="com.github.wanglikang.ideafunplugin.services.MyProjectService"/>-->
+
     </extensions>
 
-    <projectListeners>
-        <listener class="com.github.wanglikang.ideafunplugin.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </projectListeners>
+<!--    <projectListeners>-->
+<!--        <listener class="com.github.wanglikang.ideafunplugin.listeners.MyProjectManagerListener"-->
+<!--                  topic="com.intellij.openapi.project.ProjectManagerListener"/>-->
+<!--    </projectListeners>-->
+
+
+    <actions>
+        <action id="testIDEAPlugin.testRightPopUp" class="com.github.wanglikang.ideafunplugin.RightPopUp" text="RightPopUp"
+                description="测试右键菜单">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>

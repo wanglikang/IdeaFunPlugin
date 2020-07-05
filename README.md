@@ -1,41 +1,26 @@
-# IdeaFunPlugin
+# Bean To Sql Plugin 插件
+## 整体目标
+根据一个简单的bean类，生成对应的基本的增删改查的mapper.xml以及对应mapper.java
+## 使用场景
+在普通的场景下，使用MybatisGenerater这个Idea插件，根据数据库的表结构来生成bean、mapper.xml、mapper.java十分方便
 
-![Build](https://github.com/wanglikang/IdeaFunPlugin/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
+但是，在某些场景下，并开发人员并不能直接接触到数据库，或能接触到，但是直接通过mybatisGenerater访问到，在这种情况下就不能
+很方便的使用这个插件了，但是在这种场景下，往往能得到数据库表所对应的bean类。
 
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Verify the [pluginGroup](/gradle.properties), [plugin ID](/src/main/resources/META-INF/plugin.xml) and [sources package](/src/main/kotlin).
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html).
-- [ ] [Publish a plugin manually](https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/publishing_plugin.html) for the first time.
-- [ ] Set the Plugin ID in the above README badges.
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
+本插件仅仅使用这一个bean类的定义，就能自动生成对用的mapper.xml、mapper.java文件，
 
-<!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+旨在提高进行数据库操作的编码效率
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be
-extracted by the [Gradle](/build.gradle.kts) during the build process.
+## 概要设计
+### 方案一：    直接处理源文件xxx.java     
+### 方案二：    使用反射去操作对应bean类的class对象
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
-<!-- Plugin description end -->
+## 详细设计
+ 先使用方案二的思路，使用反射去操作bean
+ 
+### 方案二：
+#### 详细步骤 
++ 通过反射得到bean的各个字段
++ 对各个字段，使之转换为lowCase命名法的规范，并对应到数据库表的字段上去
++ 根据模板，生成基本的增删改查的类和mapper文件
 
-## Installation
-
-- Using IDE built-in plugin system:
-  
-  <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "IdeaFunPlugin"</kbd> >
-  <kbd>Install Plugin</kbd>
-  
-- Manually:
-
-  Download the [latest release](https://github.com/wanglikang/IdeaFunPlugin/releases/latest) and install it manually using
-  <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
-
-
----
-Plugin based on the [IntelliJ Platform Plugin Template][template].
-
-[template]: https://github.com/JetBrains/intellij-platform-plugin-template

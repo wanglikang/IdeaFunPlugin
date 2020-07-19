@@ -1,4 +1,4 @@
-package com.github.wanglikang.ideafunplugin;
+package com.github.wanglikang.ideafunplugin.ui;
 
 import com.github.wanglikang.ideafunplugin.persistent.MyPersistentData;
 import com.intellij.openapi.options.ConfigurationException;
@@ -39,6 +39,7 @@ public class ConfigPanel implements SearchableConfigurable {
             settingJPanel.repaint();
             return  settingJPanel;
         }
+
 
 
         pathField = new JTextField(50);

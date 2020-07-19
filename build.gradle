@@ -20,10 +20,17 @@ repositories {
     mavenCentral()
     jcenter()
 }
+
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 //    implementation(kotlin("stdlib-jdk8"))
 //    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.10.0")
+
+    // https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-core
+    compile group: 'org.mybatis.generator', name: 'mybatis-generator-core', version: '1.3.7'
+// https://mvnrepository.com/artifact/org.projectlombok/lombok
+    annotationProcessor  group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
 }
 
 // Configure gradle-intellij-plugin plugin.

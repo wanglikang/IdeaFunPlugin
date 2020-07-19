@@ -20,7 +20,7 @@
 
 
     <actions>
-        <action id="testIDEAPlugin.testRightPopUp" class="com.github.wanglikang.ideafunplugin.RightPopUp" text="RightPopUp"
+        <action id="testIDEAPlugin.testRightPopUp" class="com.github.wanglikang.ideafunplugin.ui.RightPopUp" text="RightPopUp"
                 description="测试右键菜单">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>

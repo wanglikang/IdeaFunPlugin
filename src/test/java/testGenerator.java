@@ -10,7 +10,6 @@ import java.util.List;
 public class testGenerator {
 
 
-    @Test
     public void testMyTest() throws Exception {
         //createDatabase();
         //List<GeneratedJavaFile>  lvLst=generateJavaFiles("/scripts/test1.xml");

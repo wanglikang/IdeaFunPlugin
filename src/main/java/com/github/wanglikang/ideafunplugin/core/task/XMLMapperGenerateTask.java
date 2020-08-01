@@ -75,7 +75,8 @@ public class XMLMapperGenerateTask implements Runnable {
             sb.append(v.getKey()+",");
         });
         sb.setCharAt(sb.length()-1,' ');
-        sb.append("\t</sql>\n");
+        sb.append("\t \n" +
+                "</sql>\n");
 
 
 

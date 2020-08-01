@@ -50,12 +50,12 @@ public class AutoGenerateTask implements Runnable {
             String fieldName = field.getName();
             final String[] split = field.getGenericType().getTypeName().split("\\.");
             switch (split[split.length-1]){
-                case "int": field2Type.put(fieldName,"Integer");break;
-                case "Integer":field2Type.put(fieldName,"Integer");break;
-                case "long": field2Type.put(fieldName,"Long");break;
-                case "Long": field2Type.put(fieldName,"Long");break;
-                case "String":field2Type.put(fieldName,"String");break;
-                case "Date": field2Type.put(fieldName,"Date");break;
+                case "int": field2Type.put(fieldName,"INTEGER");break;
+                case "Integer":field2Type.put(fieldName,"INTEGER");break;
+                case "long": field2Type.put(fieldName,"LONG");break;
+                case "Long": field2Type.put(fieldName,"LONG");break;
+                case "String":field2Type.put(fieldName,"VARCHAR");break;
+                case "Date": field2Type.put(fieldName,"DATETIME");break;
                 case "List":break;
                 case "Map":break;
                 default:break;
